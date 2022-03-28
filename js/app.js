@@ -3,6 +3,8 @@ function colorCanvas() {
     let redSlider = document.querySelector('.rgb-slider-red');
     let greenSlider = document.querySelector('.rgb-slider-green');
     let blueSlider = document.querySelector('.rgb-slider-blue');
+    let crazyModeButton = document.querySelector('.crazy-mode');
+    let crazyMode = false;
 
     let minRGB = 0;
     let maxRGB = 255;
@@ -32,6 +34,17 @@ function colorCanvas() {
         rgbDisplay.style['background-color'] = `rgb(${redColor}, ${greenColor}, ${blueColor})`;
     });
 
+    crazyModeButton.addEventListener('click', () => {
+        crazyMode = !crazyMode;
+        if (crazyMode) {
+            crazyModeButton.textContent = 'Crazy Mode on!!'
+            crazyModeButton.style['background-color'] = '#fc3f1e';
+        } else {
+            crazyModeButton.textContent = 'Crazy Mode off'
+            crazyModeButton.style['background-color'] = 'grey';
+        }
+    });
+
     let mouseDown;
     window.addEventListener('mousedown', () => { mouseDown = true; });
     window.addEventListener('mouseup', () => { mouseDown = false; });
@@ -39,7 +52,14 @@ function colorCanvas() {
     let allGridItems = document.getElementsByClassName('grid-item');
     Array.from(allGridItems).forEach(gridItem => gridItem.addEventListener('mouseover', (e) => {
         if (mouseDown) {
-            e.target.style['background-color'] = `rgb(${redColor}, ${greenColor}, ${blueColor})`;
+            if (crazyMode) {
+                e.target.style['background-color'] = `rgb(
+                    ${Math.floor(Math.random() * 256)}, 
+                    ${Math.floor(Math.random() * 256)}, 
+                    ${Math.floor(Math.random() * 256)})`;
+            } else {
+                e.target.style['background-color'] = `rgb(${redColor}, ${greenColor}, ${blueColor})`;
+            }
         }
     }));
 }
