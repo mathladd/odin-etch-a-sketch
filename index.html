@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-sketch</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/app.js" defer></script>
+</head>
+<body>
+    <div class="big-container header-container">
+        <div class="header-links">
+            
+        </div>
+        <div class="header-title">Etch-a-sketch</div> 
+    </div>
+
+    <div class="big-container main-container">
+        <div class="setting-container">
+            <div class="each-setting slider-container">
+                <div class="setting-instruction">Set canvas size: </div>
+                <div class="slider-slider-container">
+                    <input type="range" class="setting-slider size-num-slider">
+                </div>
+                <div class="slider-display"></div>
+            </div>
+            <div class="each-setting color-container">
+                <div class="setting-instruction">Set brush color: </div>
+                <div class="rgb-slider">
+                    <input data-color="red" class="setting-slider rgb-slider rgb-slider-red" type="range"></input>
+                </div>
+                <div class="rgb-slider">
+                    <input data-color="green" class="setting-slider rgb-slider rgb-slider-green" type="range"></input>
+                </div>
+                <div class="rgb-slider">
+                    <input data-color="blue" class="setting-slider rgb-slider rgb-slider-blue" type="range"></input>
+                </div>
+                <div class="rgb-display"></div>
+
+            </div>
+        </div>
+    </div>
+    <div class="big-container footer-container"></div>
+</body>
+</html>
