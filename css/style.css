@@ -1,29 +1,36 @@
 html, body {
     margin: 0;
+    padding: 0;
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .big-container {
-    padding: 3em 8em 3em 8em;
+    padding: 3em 6em 3em 6em;
+}
+
+.header-container,
+.footer-container {
+    background-color: #fa654b;
+    color: white;
+    text-align: center;
 }
 
 .header-container {
-    background-color: #fa654b;
-    color: white;
-    font-size: 30px;
-    text-align: center;
+    font-size: 36px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .main-container {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    align-items:flex-start;
+    align-items:center;
 }
 
 .setting-container {
-    width: 25em;
+    margin-right: 1em;
+    max-width: 10em;
 }
 
 .each-setting {
@@ -95,6 +102,19 @@ html, body {
     text-align: center;
 }
 
+.slider-reset {
+    border: none;
+    padding: 0.5em;
+
+    background-color: #fc3f1e;
+    color: white;
+    font-weight: bold;
+}
+
+.slider-reset:active {
+    background-color: #e02302;
+}
+
 .color-container {
     margin-top: 2em;
 }
@@ -137,8 +157,13 @@ html, body {
 .rgb-display {
     height: 3em;
     width: 3em;
-    border: 1px dashed #6e6e6e;
+    margin-top: 0.7em;
+    border: 1px solid #c2c2c2;
     border-radius: 10px;
 }
 
+.footer-container {
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+}
 
